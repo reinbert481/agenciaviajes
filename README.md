@@ -2,17 +2,27 @@
 
 **1. Clonar el proyecto con:**
 
-    git clone https://github.com/reinbert481/agenciaviajes.git
+```bash
+git clone https://github.com/reinbert481/agenciaviajes.git
+```
 
 **2. Instalar dependencias con:**
 
-    composer install
-    npm install
+```bash
+composer install
+```
+```bash
+npm install
+```
 
 **3. Crear el archivo ".env" y generar la clave "APP_KEY=" con:**
 
-    cp .env.example .env
-    php artisan key:generate
+```bash
+cp .env.example .env
+```
+```bash
+php artisan key:generate
+```
 
 **4. En el archivo ".env" verificar el nombre de la base de datos (editar de ser necesario)**
 
@@ -20,7 +30,9 @@
 
 **6. Realizar las migraciones de las tablas a la base de datos con:**
 
-    php artisan migrate
+```bash
+php artisan migrate
+```
 
 ## El proyecto ya está listo para funcionar!
 
@@ -35,18 +47,29 @@ de Spatie.
 
 * **Iniciar la aplicación con:**
 
-      php artisan serve
+```bash
+php artisan serve
+```
 
 * **Registrar como primer usuario a:**
 
-      nombre: Administrador
-      email: admin@admin.com
-      password: 12345678
+`nombre: Administrador`
+`email: admin@admin.com`
+`password: 12345678`
 
-     NOTA: Puede ser cualquier password con 8 caracteres mímimo. Registrar con esos datos es para tener
-     acceso total a la aplicación ya que ese email está configurado como superusuario o superadministrador.
-     Es una configuración necesaria de Spatie para poder administrar los roles y permisos.
+NOTA: Puede ser cualquier password con 8 caracteres mímimo. Registrar con esos datos es para tener
+acceso total a la aplicación ya que ese email está configurado como superusuario o superadministrador.
+Es una configuración necesaria de Spatie para poder administrar los roles y permisos.
   
-_En una próxima actualización se explicará como crear roles y asignar permisos a cada rol._
+Por ahora la aplicación tiene configurados permisos para las tablas `Roles` y `Vehiculos`. Para poder usarlos
+en la aplicación hay que cargar la tabla `Permisos` con el comando:
+
+```bash
+php artisan db:seed --class=SeederTablaPermisos
+```
+---
+**En futuras actualizaciones se agregará más documentación explicando la evolución y/o correcciones del proyecto.**
+
+---
 
 **Buena suerte!**
