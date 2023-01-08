@@ -29,7 +29,6 @@ php artisan key:generate
 **5. En "phpMyAdmin" crear la base de datos con el mismmo nombre que aparece en el archivo ".env"**
 
 **6. Realizar las migraciones de las tablas a la base de datos con:**
-
 ```bash
 php artisan migrate
 ```
@@ -50,6 +49,24 @@ de Spatie.
 ```bash
 php artisan serve
 ```
+NOTA: si aparece el error `Illuminate\Database\QueryExeption` ir al archivo "database.php"
+	en la carpeta "config" y en la sección "mysql" editar las siguientes líneas:
+```php
+'charset => 'utf8mb4',
+'collation' => 'utf8mb4_unicode_ci',
+'engine' => null,
+```
+para que diga:
+```php
+'charset => 'utf8',
+'collation' => 'utf8_unicode_ci',
+'engine' => 'innodb',
+```
+Luego de editar estas líneas hay que vaciar la base de datos antes de volverlas a migrar.
+
+(Para vaciar la base de datos eliminar todas las tablas desde phpMyAdmin. Eliminar sólo las tablas, NO la base de datos).
+
+Una vez vuelta a hacer la migración tendrían que aparecer todas las tablas correctamente y sin problemas.
 
 * **Registrar como primer usuario a:**
 
