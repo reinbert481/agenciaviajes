@@ -5,7 +5,10 @@
 ```bash
 git clone https://github.com/reinbert481/agenciaviajes.git
 ```
-
+y luego cambiar a la carpeta "agenciaviajes" con:
+```bash
+cd agenciaviajes
+```
 **2. Instalar dependencias con:**
 
 ```bash
