@@ -42,7 +42,9 @@
                             @endcan                            
                         </li>
                         <li>
-                            <a class="btn" href="{{ route('vehiculos.index') }}"><h5>Vehículos</h5></a>
+                            @can('ver-vehiculo')
+                                <a class="btn" href="{{ route('vehiculos.index') }}"><h5>Vehículos</h5></a>
+                            @endcan
                         </li>
                     </ul>
 

@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Vehiculo</span>
+                        <span class="card-title">Editar Vehiculo</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('vehiculos.update', $vehiculo->id) }}"  role="form" enctype="multipart/form-data">
@@ -23,6 +23,7 @@
                             @include('vehiculo.form')
 
                         </form>
+                        <a class="btn btn-secondary" href="{{ route('vehiculos.index') }}">Cancelar</a>
                     </div>
                 </div>
             </div>

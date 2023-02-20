@@ -17,9 +17,11 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('vehiculos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
+                                @can('crear-vehiculo')
+                                    <a href="{{ route('vehiculos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                        {{ __('Agregar Vehículo') }}
+                                    </a>
+                                @endcan
                               </div>
                         </div>
                     </div>
@@ -39,13 +41,13 @@
 										<th>Nombre</th>
 										<th>Marca</th>
 										<th>Modelo</th>
-										<th>Imagen</th>
-										<th>Preciopordia</th>
-										<th>Tipocaja</th>
-										<th>Cantidadpuertas</th>
-										<th>Aireacond</th>
-										<th>Kilomhabilitado</th>
-										<th>Tipocobertura</th>
+										<th>Foto</th>
+										<th>Precio/Día</th>
+										<th>Caja</th>
+										<th>Cant. Puertas</th>
+										<th>Aire</th>
+										<th>km Habilitados</th>
+										<th>Cobertura</th>
 
                                         <th></th>
                                     </tr>
@@ -68,11 +70,17 @@
 
                                             <td>
                                                 <form action="{{ route('vehiculos.destroy',$vehiculo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('vehiculos.show',$vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('vehiculos.edit',$vehiculo->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @can('ver-vehiculo')
+                                                        <a class="btn btn-sm btn-primary " href="{{ route('vehiculos.show',$vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i>Ver</a>
+                                                    @endcan
+                                                    @can('editar-vehiculo')
+                                                    <a class="btn btn-sm btn-success" href="{{ route('vehiculos.edit',$vehiculo->id) }}"><i class="fa fa-fw fa-edit"></i>Editar</a>
+                                                    @endcan
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    @can('borrar-vehiculo')
+                                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
+                                                    @endcan
                                                 </form>
                                             </td>
                                         </tr>
