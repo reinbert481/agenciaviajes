@@ -21,7 +21,6 @@
 
                             @include('vehiculo.form')
                         </form>
-                            <a class="btn btn-secondary" href="{{ route('vehiculos.index') }}">Cancelar</a>
                     </div>
                 </div>
             </div>

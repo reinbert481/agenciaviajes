@@ -53,7 +53,8 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
+    <div class="box-footer" style="margin-top: 15px">
         <button type="submit" class="btn btn-primary">Aceptar</button>
+        <a class="btn btn-secondary" href="{{ route('vehiculos.index') }}">Cancelar</a>
     </div>
 </div>

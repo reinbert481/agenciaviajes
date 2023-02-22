@@ -50,6 +50,11 @@ de Spatie.
 * **Iniciar la aplicación con:**
 
 ```bash
+npm run dev
+```
+* **Y luego en otra ventana de terminal con:**
+
+```bash
 php artisan serve
 ```
 NOTA: si aparece el error `Illuminate\Database\QueryExeption` ir al archivo "database.php"
