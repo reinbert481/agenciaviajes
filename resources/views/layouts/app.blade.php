@@ -20,8 +20,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand btn" href="{{ url('/') }}" style="background-color: #ccc">
+                    {{-- {{ config('app.name', 'Laravel') }} --}}DS Travel
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,9 @@
                             <a class="btn" href="{{ route('home') }}"><h5>Home</h5></a>
                         </li>
                         <li>
+                            @can('ver-usuario')
                             <a class="btn" href="{{ route('usuarios.index') }}"><h5>Usuarios</h5></a>
+                            @endcan
                         </li>
                         <li>
                             @can('ver-rol')
@@ -45,6 +47,9 @@
                             @can('ver-vehiculo')
                                 <a class="btn" href="{{ route('vehiculos.index') }}"><h5>Vehículos</h5></a>
                             @endcan
+                        </li>
+                        <li>
+                            <a class="btn" href="{{ route('reservas.index') }}"><h5>Reservas</h5></a>
                         </li>
                     </ul>
 
