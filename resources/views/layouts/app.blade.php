@@ -34,7 +34,9 @@
                             <a class="btn" href="{{ route('home') }}"><h5>Home</h5></a>
                         </li>
                         <li>
+                            @can('ver-usuario')
                             <a class="btn" href="{{ route('usuarios.index') }}"><h5>Usuarios</h5></a>
+                            @endcan
                         </li>
                         <li>
                             @can('ver-rol')

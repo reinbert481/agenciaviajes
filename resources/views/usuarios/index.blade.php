@@ -14,7 +14,9 @@
                         </div>
                     @endif
                     
+                    @can('crear-usuario')
                     <a class="btn btn-warning" href="{{ route('usuarios.create') }}">Nuevo</a>
+                    @endcan
 
                     <table class="table table-striped mt-2">
                         <thead style="background-color:#6777ef;">
@@ -39,10 +41,14 @@
                                     </td>
                                     <td>
                                         <form action="{{ route('usuarios.destroy',$usuario->id) }}" method="POST">
+                                            @can('editar-usuario')
                                             <a class="btn btn-info" href="{{ route('usuarios.edit',$usuario->id) }}">Editar</a>
+                                            @endcan
                                             @csrf
                                             @method('DELETE')
+                                            @can('borrar-usuario')
                                             <button type="submit" class="btn btn-danger">Eliminar</button>
+                                            @endcan
                                         </form>
                                     </td>
                                 </tr>
