@@ -31,20 +31,23 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li>
-                            <a class="btn" href="{{ route('home') }}"><h5>Home</h5></a>
+                            <a class="btn" href="{{ route('home') }}"><h6>Home</h6></a>
                         </li>
                         <li>
-                            <a class="btn" href="{{ route('usuarios.index') }}"><h5>Usuarios</h5></a>
+                            <a class="btn" href="{{ route('usuarios.index') }}"><h6>Usuarios</h6></a>
                         </li>
                         <li>
                             @can('ver-rol')
-                                <a class="btn" href="{{ route('roles.index') }}"><h5>Roles</h5></a>
+                                <a class="btn" href="{{ route('roles.index') }}"><h6>Roles</h6></a>
                             @endcan                            
                         </li>
                         <li>
                             @can('ver-vehiculo')
-                                <a class="btn" href="{{ route('vehiculos.index') }}"><h5>Vehículos</h5></a>
+                                <a class="btn" href="{{ route('vehiculos.index') }}"><h6>Vehículos</h6></a>
                             @endcan
+                        </li>
+                        <li>
+                            <a class="btn" href="{{ route('reservas.index') }}"><h6>Reservas</h6></a>
                         </li>
                     </ul>
 
