@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\VehiculoController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;     //meter esta instrucción después de instalar el paquete laravel/ui sino da error
 
 //Spatie
 use App\Http\Controllers\RoleController;
@@ -24,7 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes();     //use Illuminate/Support/Facades/Auth; soluciona el problema de "tipo Auth no definido"
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
